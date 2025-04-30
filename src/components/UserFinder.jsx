@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import studentsData from "../data/students_info.json";
+import "../style/UserFinder.css";
 export default function UserFinder() {
   const [students, setStudents] = useState(null);
   const [search, setSearch] = useState("");
@@ -44,21 +45,28 @@ export default function UserFinder() {
                     <div className="suggestion-container">
                       <div className="suggestion-box">
                         {students.map((student, index) => (
-                          <div className="suggestion-unit p-2" key={index}>
-                            <div id="student-name">
-                              <a href="#">{student.name}</a>
+                          <>
+                            {index == 0 ? (
+                              ""
+                            ) : (
+                              <div className="border-top"></div>
+                            )}
+                            <div className="suggestion-unit p-2" key={index}>
+                              <div id="student-name">
+                                <p className="m-0">{student.name}</p>
+                              </div>
+                              <div id="father-name">
+                                <p className="m-0 small text-secondary">
+                                  {student.father}
+                                </p>
+                              </div>
+                              <div id="admission-number">
+                                <p className="m-0 small text-secondary">
+                                  {student.adm_no}
+                                </p>
+                              </div>
                             </div>
-                            <div id="father-name">
-                              <p className="m-0 small text-secondary">
-                                {student.father}
-                              </p>
-                            </div>
-                            <div id="admission-number">
-                              <p className="m-0 small text-secondary">
-                                {student.adm_no}
-                              </p>
-                            </div>
-                          </div>
+                          </>
                         ))}
                       </div>
                     </div>

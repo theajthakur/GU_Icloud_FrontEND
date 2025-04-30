@@ -1,0 +1,21 @@
+#student-name p {
+  color: #0581bf;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+}
+
+#student-name p:hover {
+  color: #009ae7;
+}
+
+.suggestion-container .suggestion-box .suggestion-unit p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.suggestion-container .suggestion-box {
+  max-height: 400px;
+  overflow-y: scroll;
+}
