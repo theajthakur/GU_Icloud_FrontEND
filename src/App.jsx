@@ -1,7 +1,13 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./components/Navbar";
+import UserFinder from "./components/UserFinder";
 
 export default function App() {
-  return <Navbar />;
+  return (
+    <>
+      <Navbar />
+      <UserFinder />
+    </>
+  );
 }
