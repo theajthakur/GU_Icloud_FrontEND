@@ -17,13 +17,13 @@ export default function UserFinder() {
   }, [search]);
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 overflow-hidden">
       <div className="bg-light p-3">
         <div className="row">
           <div className="col-md-6">
-            <div className="search-form">
-              <div className="bg-white p-3 shadow-sm">
-                <h3 className="text-center">
+            <div className="search-form animate__animated animate__fadeInLeft">
+              <div className="bg-white p-3 shadow-sm my-4">
+                <h3 className="text-center search-heading">
                   <strong>Search Student</strong>
                 </h3>
                 <div className="main-search">
@@ -45,13 +45,13 @@ export default function UserFinder() {
                     <div className="suggestion-container">
                       <div className="suggestion-box">
                         {students.map((student, index) => (
-                          <>
+                          <div key={index}>
                             {index == 0 ? (
                               ""
                             ) : (
                               <div className="border-top"></div>
                             )}
-                            <div className="suggestion-unit p-2" key={index}>
+                            <div className="suggestion-unit p-2">
                               <div id="student-name">
                                 <p className="m-0">{student.name}</p>
                               </div>
@@ -66,13 +66,29 @@ export default function UserFinder() {
                                 </p>
                               </div>
                             </div>
-                          </>
+                          </div>
                         ))}
                       </div>
                     </div>
                   ) : (
                     ""
                   )}
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="col-md-6">
+            <div className="h-100 sidebar-show-beautify animate__animated animate__fadeInRight animate__delay-1s">
+              <div className="d-inline-flex w-100 h-100 justify-content-center align-items-center">
+                <div className="text-center heading-big my-4">
+                  <h1 className="text-secondary">
+                    <strong>Student Finder</strong>
+                  </h1>
+                  <p className="text-secondary animate__animated animate__fadeInUp animate__delay-2s">
+                    <strong>
+                      Search for a student by name or admission number
+                    </strong>
+                  </p>
                 </div>
               </div>
             </div>
