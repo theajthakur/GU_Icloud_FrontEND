@@ -4,8 +4,9 @@ import "../style/UserFinder.css";
 export default function UserFinder() {
   const [students, setStudents] = useState(null);
   const [search, setSearch] = useState("");
+  const [admission, setAdmission] = useState(null);
   useEffect(() => {
-    if (!search || search.length < 5) return setStudents(null);
+    if (!search || search.length.trim() < 5) return setStudents(null);
     let filtered;
     filtered = studentsData.filter((aa) =>
       aa.name.trim().toLowerCase().includes(search.trim())
